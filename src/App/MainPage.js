@@ -3,6 +3,7 @@ import {
   Avatar,
   BackgroundImage,
   BackgroundImageSrc,
+  Badge,
   Brand,
   Breadcrumb,
   BreadcrumbItem,
@@ -25,6 +26,8 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  Split,
+  SplitItem,
   TextContent,
   Text,
   Toolbar,
@@ -54,7 +57,6 @@ class PageLayoutDefaultNav extends React.Component {
       isDropdownOpen
     });
   };
-
   onDropdownSelect = event => {
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
@@ -83,10 +85,10 @@ class PageLayoutDefaultNav extends React.Component {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav" isExpanded="false">
         <NavList>
           <NavItem to="#nav-link1" itemId={0} isActive={activeItem === 0}>
-            System Panel
+            Hi Dana System Panel
           </NavItem>
           <NavItem to="#nav-link2" itemId={1} isActive={activeItem === 1}>
             Policy
@@ -177,12 +179,12 @@ class PageLayoutDefaultNav extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = <PageSidebar nav={PageNav} isNavOpen="false" />;
 
     return (
       <React.Fragment>
         <BackgroundImage src={bgImages} />
-        <Page header={Header} sidebar={Sidebar} isManagedSidebar isNavOpen="false">
+        <Page header={Header} sidebar={Sidebar} isManagedSidebar>
           <PageSection variant={PageSectionVariants.light}>
             <Breadcrumb>
               <BreadcrumbItem to="#">Home</BreadcrumbItem>
@@ -201,7 +203,14 @@ class PageLayoutDefaultNav extends React.Component {
               {Array.apply(0, Array(10)).map((x, i) => (
                 <GalleryItem key={i}>
                   <Card>
-                    <CardBody>FacePlace</CardBody>
+                    <CardBody>
+                      <Split>
+                        <SplitItem isMain>My Space</SplitItem>
+                        <SplitItem>
+                          <Badge>7</Badge>
+                        </SplitItem>
+                      </Split>                      
+                    </CardBody>
                   </Card>
                 </GalleryItem>
               ))}
