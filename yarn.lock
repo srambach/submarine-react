@@ -772,6 +772,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.2.tgz#63985d3d8b02530e0869962f4da09142ee8e200e"
   integrity sha512-n/VQ4mbfr81aqkx/XmVicOLjviMuy02eenSdJY33SVA7S2J42EU0P1H0mOogfYedb3wXA0d/LVtBrgTSm04WEA==
 
+"@patternfly/patternfly@^1.0.250":
+  version "1.0.250"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-1.0.250.tgz#02952d55039891ab4796b6e78e677ecd01c25855"
+  integrity sha512-Ew9m5sRTjb68ewzD1gk/QMgJYZl/0jyXtSSYaSdXyzpzB+0Yj+46qhcKDCGql6MzXxO7kZ8vjt4gmBRqfV+OnA==
+
 "@patternfly/react-core@^2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-2.1.4.tgz#be16ae1928d694eb1408f585542471abf3c147f9"

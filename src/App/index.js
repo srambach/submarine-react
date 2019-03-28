@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
 import './app.css';
+import {MainPage} from './MainPage';
 
 export default class App extends Component {
   state = {
@@ -15,13 +15,8 @@ export default class App extends Component {
       <div className="app-container">
         {isShowing && (
           <div className="notification-container">
-            <Alert
-              variant="success"
-              title="Setup Complete"
-              action={<AlertActionCloseButton onClose={this.dismissNotification} />}
-            >
-              You have successfully launched your patternfly starter project.
-            </Alert>
+            <MainPage>
+            </MainPage>
           </div>
         )}
       </div>
