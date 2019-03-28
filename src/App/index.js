@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './app.css';
-import {MainPage} from './MainPage';
+import MainPage from './MainPage';
 
 export default class App extends Component {
   state = {
@@ -12,12 +12,10 @@ export default class App extends Component {
   render() {
     const { isShowing } = this.state;
     return (
-      <div className="app-container">
+      <div>
         {isShowing && (
-          <div className="notification-container">
             <MainPage>
             </MainPage>
-          </div>
         )}
       </div>
     );
