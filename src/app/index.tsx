@@ -7,6 +7,7 @@ import sm from '@assets/images/pfbg_768.jpg';
 import sm2x from '@assets/images/pfbg_768@2x.jpg';
 import lg from '@assets/images/pfbg_1200.jpg';
 import filter from '@assets/images/background-filter.svg';
+import SpacesPage from './SpacesPage';
 
 const images = {
   [BackgroundImageSrc.xs]: xs,
@@ -26,19 +27,7 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <BackgroundImage src={images} />
-        <div className="app-container">
-          {isShowing && (
-            <div className="notification-container">
-              <Alert
-                variant="success"
-                title="Setup Complete"
-                action={<AlertActionCloseButton onClose={this.dismissNotification} />}
-              >
-                You have successfully launched your patternfly starter project.
-              </Alert>
-            </div>
-          )}
-        </div>
+        <SpacesPage/>
       </React.Fragment>
     );
   }
