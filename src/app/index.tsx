@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, AlertActionCloseButton, BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';
+import { Route } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
 import '@app/app.css';
 import xs from '@assets/images/pfbg_576.jpg';
 import xs2x from '@assets/images/pfbg_576@2x.jpg';
@@ -28,8 +30,11 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <BackgroundImage src={images} />
-        {/* <SpacesPage/> */}
-        <SpaceView/>
+        <Router>
+          <Route exact path="/" component={SpacesPage} />
+          <Route path="/spaceview" component={SpaceView} />
+          <Route path="/spacespage" component={SpacesPage} />
+        </Router>
       </React.Fragment>
     );
   }
