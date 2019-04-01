@@ -41,8 +41,9 @@ import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
 // import brandImg from './l_pf-reverse-164x11.png';
 import avatarImg from './img/catavatar.png';
+import { RouteComponentProps } from 'react-router-dom';
 
-class PageLayoutDefaultNav extends React.Component {
+class PageLayoutDefaultNav extends React.Component<RouteComponentProps<any>>{
   public state = {
     isDropdownOpen: false,
     isKebabDropdownOpen: false,
@@ -86,6 +87,11 @@ class PageLayoutDefaultNav extends React.Component {
     this.setState({
       activeItem: result.itemId
     });
+  };
+
+  private onClickFromCard = () => {
+    const { history } = this.props;
+    history.push("/spaceview");
   };
 
   public render() {
@@ -184,17 +190,17 @@ class PageLayoutDefaultNav extends React.Component {
         toolbar={PageToolbar}
         avatar={<Avatar src={avatarImg} alt="Avatar image" />}
         showNavToggle
-        // isNavOpen={false} 
+        // isNavOpen={false}
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} 
-    isNavOpen={false} 
+    const Sidebar = <PageSidebar nav={PageNav}
+    isNavOpen={false}
     />;
 
     return (
       <React.Fragment>
         <BackgroundImage src={bgImages} />
-        <Page header={Header} sidebar={Sidebar} 
+        <Page header={Header} sidebar={Sidebar}
         // isManagedSidebar={false}
         isManagedSidebar
         >
@@ -212,10 +218,10 @@ class PageLayoutDefaultNav extends React.Component {
               <SplitItem isMain>
                   <TextContent>
                     <Text component="h1">Spaces</Text>
-                  </TextContent>          
+                  </TextContent>
               </SplitItem>
               <SplitItem isMain={false}>
-                  <Button>Add Space</Button>         
+                  <Button>Add Space</Button>
               </SplitItem>
             </Split>
           </PageSection>
@@ -224,10 +230,10 @@ class PageLayoutDefaultNav extends React.Component {
               {Array.apply(0, Array(10)).map((x, i) => (
                 <GalleryItem key={i}>
                   <Card>
-                    <CardBody>
+                    <CardBody onClick={this.onClickFromCard}>
                       <Split>
                         <SplitItem isMain>
-                          MySpace
+                          My space
                         </SplitItem>
                         <SplitItem isMain={false}>
                           <Badge isRead>1</Badge>
