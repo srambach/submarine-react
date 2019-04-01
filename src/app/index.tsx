@@ -8,6 +8,7 @@ import sm2x from '@assets/images/pfbg_768@2x.jpg';
 import lg from '@assets/images/pfbg_1200.jpg';
 import filter from '@assets/images/background-filter.svg';
 import SpacesPage from './SpacesPage';
+import SpaceView from './SpaceView';
 
 const images = {
   [BackgroundImageSrc.xs]: xs,
@@ -27,7 +28,8 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <BackgroundImage src={images} />
-        <SpacesPage/>
+        {/* <SpacesPage/> */}
+        <SpaceView/>
       </React.Fragment>
     );
   }
