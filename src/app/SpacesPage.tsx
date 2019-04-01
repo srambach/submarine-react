@@ -230,7 +230,7 @@ class PageLayoutDefaultNav extends React.Component {
                           MySpace
                         </SplitItem>
                         <SplitItem isMain={false}>
-                          <Badge>1</Badge>
+                          <Badge isRead>1</Badge>
                         </SplitItem>
                       </Split>
                     </CardBody>

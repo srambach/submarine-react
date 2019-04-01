@@ -41,7 +41,7 @@ import {
 // import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
 // import spacingStyles from '@patternfly/patternfly/utilities/Spacing/spacing.css';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, FileIcon } from '@patternfly/react-icons';
 // import brandImg from './l_pf-reverse-164x11.png';
 import avatarImg from './img/catavatar.png';
 
@@ -267,12 +267,12 @@ class PageLayoutDefaultNav extends React.Component {
                           </TextContent>          
                         </SplitItem>
                         <SplitItem isMain={false}>
-                          <Badge>3</Badge>
+                          <Badge isRead>3</Badge>
                         </SplitItem>
                       </Split>
                     </CardHeader>
                     <CardFooter>
-                      GitHub
+                      <FileIcon/> GitHub
                     </CardFooter>
                   </Card>
                 </GalleryItem>
