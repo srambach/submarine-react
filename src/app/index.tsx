@@ -11,6 +11,7 @@ import lg from '@assets/images/pfbg_1200.jpg';
 import filter from '@assets/images/background-filter.svg';
 import SpacesPage from './SpacesPage';
 import SpaceView from './SpaceView';
+import ProjectView from './ProjectView';
 
 const images = {
   [BackgroundImageSrc.xs]: xs,
@@ -32,8 +33,9 @@ export default class App extends Component {
         <BackgroundImage src={images} />
         <Router>
           <Route exact path="/" component={SpacesPage} />
-          <Route path="/spaceview" component={SpaceView} />
           <Route path="/spacespage" component={SpacesPage} />
+          <Route path="/spaceview" component={SpaceView} />
+          <Route path="/projectview" component={ProjectView} />
         </Router>
       </React.Fragment>
     );

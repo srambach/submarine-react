@@ -27,6 +27,7 @@ import {
   PageSidebar,
   TextContent,
   Text,
+  Title,
   Toolbar,
   ToolbarGroup,
   ToolbarItem,
@@ -127,15 +128,7 @@ class PageLayoutDefaultNav extends React.Component<RouteComponentProps<any>>{
       </DropdownItem>
     ];
     const userDropdownItems = [
-      <DropdownItem>Link</DropdownItem>,
-      <DropdownItem>Action</DropdownItem>,
-      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
-      <DropdownItem isDisabled>
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator />,
-      <DropdownItem>Separated Link</DropdownItem>,
-      <DropdownItem>Separated Action</DropdownItem>
+      <DropdownItem>Logout</DropdownItem>
     ];
     const PageToolbar = (
       <Toolbar>
@@ -189,7 +182,7 @@ class PageLayoutDefaultNav extends React.Component<RouteComponentProps<any>>{
         logo={"Kogito"}
         toolbar={PageToolbar}
         avatar={<Avatar src={avatarImg} alt="Avatar image" />}
-        showNavToggle
+        // showNavToggle
         // isNavOpen={false}
       />
     );
@@ -200,9 +193,10 @@ class PageLayoutDefaultNav extends React.Component<RouteComponentProps<any>>{
     return (
       <React.Fragment>
         <BackgroundImage src={bgImages} />
-        <Page header={Header} sidebar={Sidebar}
+        <Page header={Header} 
+        // sidebar={Sidebar}
         // isManagedSidebar={false}
-        isManagedSidebar
+        // isManagedSidebar
         >
           <PageSection variant={PageSectionVariants.light}>
 
@@ -216,9 +210,7 @@ class PageLayoutDefaultNav extends React.Component<RouteComponentProps<any>>{
             </Breadcrumb>
             <Split>
               <SplitItem isMain>
-                  <TextContent>
-                    <Text component="h1">Spaces</Text>
-                  </TextContent>
+                <Title headingLevel="h1" size="3xl">Spaces</Title>
               </SplitItem>
               <SplitItem isMain={false}>
                   <Button>Add Space</Button>

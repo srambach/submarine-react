@@ -315,6 +315,11 @@
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
 
+"@patternfly/patternfly@^1.0.250":
+  version "1.0.250"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-1.0.250.tgz#02952d55039891ab4796b6e78e677ecd01c25855"
+  integrity sha512-Ew9m5sRTjb68ewzD1gk/QMgJYZl/0jyXtSSYaSdXyzpzB+0Yj+46qhcKDCGql6MzXxO7kZ8vjt4gmBRqfV+OnA==
+
 "@patternfly/react-core@^2.3.6":
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-2.9.2.tgz#f21cfaaa244d690ff0429f53fff5f937d1c7d16b"
