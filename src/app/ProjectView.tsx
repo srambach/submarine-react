@@ -36,20 +36,18 @@ import {
   Breadcrumb,
   Split,
   SplitItem,
-  CardFooter,
-  Stack,
-  StackItem
+  CardFooter
 } from '@patternfly/react-core';
 // make sure you've installed @patternfly/patternfly
 // import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
-import '@patternfly/patternfly/utilities/Spacing/spacing.css';
+// import spacingStyles from '@patternfly/patternfly/utilities/Spacing/spacing.css';
 import { css } from '@patternfly/react-styles';
-import { BellIcon, CogIcon, FileIcon } from '@patternfly/react-icons';
+import { BellIcon, CogIcon, FileImageIcon } from '@patternfly/react-icons';
 // import brandImg from './l_pf-reverse-164x11.png';
 import avatarImg from './img/catavatar.png';
-import { RouteComponentProps } from 'react-router-dom';
+import { DataList, DataListItem, DataListCell } from '@patternfly/react-core';
 
-class PageLayoutDefaultNav extends React.Component<RouteComponentProps<any>>{
+class PageLayoutDefaultNav extends React.Component {
   public state = {
     isDropdownOpen: false,
     isKebabDropdownOpen: false,
@@ -98,11 +96,6 @@ class PageLayoutDefaultNav extends React.Component<RouteComponentProps<any>>{
   // public handleTextInputChange = value => {
   //   this.setState({ searchValue: value });
   // };
-
-  private onClickFromCard = () => {
-    const { history } = this.props;
-    history.push("/projectview");
-  };
 
   public render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
@@ -208,75 +201,80 @@ class PageLayoutDefaultNav extends React.Component<RouteComponentProps<any>>{
         // isManagedSidebar
         >
           <PageSection variant={PageSectionVariants.light}>
-<Stack gutter="md">
-      <StackItem isMain={false}>
-          <Breadcrumb>
-            <BreadcrumbItem to="/">Spaces</BreadcrumbItem>
-            <BreadcrumbItem to="#" isActive>
-                MySpace
-            </BreadcrumbItem>
-          </Breadcrumb>        
-      </StackItem>
-      <StackItem isMain={false}>
-        <Split>
-          <SplitItem isMain>
-            <Title headingLevel="h1" size="3xl">MySpace</Title>
-          </SplitItem>
-          <SplitItem isMain={false}>
-            <Toolbar>
-              <ToolbarGroup>
-                <ToolbarItem>
-                  <TextInput 
-                    // value={value} 
-                    type="search" 
-                    // onChange={this.handleTextInputChange} 
-                    aria-label="search text input" />
-                </ToolbarItem>
-              </ToolbarGroup>
-              <ToolbarGroup>
-                <ToolbarItem>
-                  <Button variant="secondary">Add File</Button>
-                </ToolbarItem>
-                <ToolbarItem className="pf-u-mx-sm">
-                  <Button>Add Project</Button>
-                </ToolbarItem>
-              </ToolbarGroup>
-            </Toolbar>
-          </SplitItem>
-        </Split>
-      </StackItem>
-</Stack>
 
+            <Breadcrumb>
+              <BreadcrumbItem to="/">Spaces</BreadcrumbItem>
+              <BreadcrumbItem to="/spaceview">
+                  MySpace
+              </BreadcrumbItem>
+              <BreadcrumbItem to="#" isActive>
+                  MyProject
+              </BreadcrumbItem>
+            </Breadcrumb>
+            <Split>
+              <SplitItem isMain>
+                <Title headingLevel="h1" size="3xl">MyProject</Title>
+              </SplitItem>
+              <SplitItem isMain={false}>
+                <Toolbar>
+                  <ToolbarGroup>
+                    <ToolbarItem> {/*className={css(spacingStyles.mxMd)}*/}
+                      <Button variant="tertiary">Delete Project</Button>
+                    </ToolbarItem>
+                  </ToolbarGroup>
+                </Toolbar>
 
-
+         
+              </SplitItem>
+            </Split>
           </PageSection>
           <PageSection>
-            <Gallery gutter="md">
-              {Array.apply(0, Array(5)).map((x, i) => (
-                <GalleryItem key={i}>
-                  <Card>
-                    <CardHeader onClick={this.onClickFromCard}>
-                      <Split>
-                        <SplitItem isMain>
-                          <TextContent>
-                            <Text component="h2">MyProject</Text>
-                          </TextContent>          
-                          <TextContent>
-                            <Text >DMN business decision project</Text>
-                          </TextContent>          
-                        </SplitItem>
-                        <SplitItem isMain={false}>
-                          <Badge isRead>3</Badge>
-                        </SplitItem>
-                      </Split>
-                    </CardHeader>
-                    <CardFooter>
-                      <FileIcon/> GitHub
-                    </CardFooter>
-                  </Card>
-                </GalleryItem>
-              ))}
-            </Gallery>
+<Toolbar>
+  <ToolbarGroup>
+    <ToolbarItem>
+      <Button variant="primary">Add File</Button>
+    </ToolbarItem>
+  </ToolbarGroup>
+</Toolbar>
+            <DataList aria-label="List of project files">
+              <DataListItem aria-labelledby="simple-item1" isExpanded={false}>
+                <DataListCell width={1}>
+                  <FileImageIcon size="md" />
+                </DataListCell>
+                <DataListCell width={4}>
+                  <span id="simple-item1">myBusinessDecision</span>
+                </DataListCell>
+                <DataListCell width={2}>DMN</DataListCell>
+                <DataListCell width={4}>Last modified 1 week ago</DataListCell>
+                <DataListCell width={4}>Created 3 weeks ago</DataListCell>
+              </DataListItem>
+
+              <DataListItem aria-labelledby="simple-item2" isExpanded={false}>
+                <DataListCell width={1}>
+                  <FileImageIcon size="md"/>
+                </DataListCell>
+                <DataListCell width={4}>
+                  <span id="simple-item2">myBusinessDecision</span>
+                </DataListCell>
+                <DataListCell width={2}>DMN</DataListCell>
+                <DataListCell width={4}>Last modified 1 week ago</DataListCell>
+                <DataListCell width={4}>Created 3 weeks ago</DataListCell>
+              </DataListItem>
+
+              <DataListItem aria-labelledby="simple-item3" isExpanded={false}>
+                <DataListCell width={1}>
+                  <FileImageIcon size="md"/>
+                </DataListCell>
+                <DataListCell width={4}>
+                  <span id="simple-item3">myBusinessDecision</span>
+                </DataListCell>
+                <DataListCell width={2}>DMN</DataListCell>
+                <DataListCell width={4}>Last modified 1 week ago</DataListCell>
+                <DataListCell width={4}>Created 3 weeks ago</DataListCell>
+              </DataListItem>
+
+            </DataList>
+
           </PageSection>
         </Page>
       </React.Fragment>
